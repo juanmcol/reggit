@@ -1,22 +1,20 @@
 import { useDispatch, useSelector } from "react-redux"
-import { selectPostsData, selectPostsPopular, selectPostsDataFiltered, loadDummyPosts, filterPosts, loadPopular } from "./postsSlice";
+import { selectPostsPopular, selectPostsSearch, loadPopular, loadSearch } from "./postsSlice";
 import { selectSearchBarQuery } from "../searchBar/searchBarSlice";
 import { useEffect } from "react";
 import Post from "../../components/Post";
 
 export const Posts = () => {
-    const posts = useSelector(selectPostsData);
     const popular = useSelector(selectPostsPopular);
-    const postsFiltered = useSelector(selectPostsDataFiltered);
+    const search = useSelector(selectPostsSearch);
     const query = useSelector(selectSearchBarQuery);
     const dispatch = useDispatch();
 
-    /* useEffect(() => {
-        dispatch(filterPosts(query));
-    }, [query]); */
+    useEffect(() => {
+        dispatch(loadSearch(query));
+    }, [query]);
 
     const onFirstRender = () => {
-        // dispatch(loadDummyPosts());
         dispatch(loadPopular());
     }
     useEffect(onFirstRender, []);
@@ -24,9 +22,9 @@ export const Posts = () => {
     return (
         <div id="posts-container">
             <h2>Posts</h2>
-            {true ? popular.map((post) => (
+            {query === "" ? popular.map((post) => (
                 <Post post={post} key={post.id}/>
-            )) : postsFiltered.map((post) => (
+            )) : search.map((post) => (
                 <Post post={post} key={post.id}/>
             )) }
         </div>

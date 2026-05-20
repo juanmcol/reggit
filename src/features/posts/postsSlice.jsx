@@ -2,17 +2,23 @@ import { createAsyncThunk, createSlice, isPending, isRejected } from "@reduxjs/t
 import { dummyData } from "../../API/dummyData";
 import { redditAPI } from "../../API/RedditJSON_API";
 
-const redditPopular = redditAPI.fetchPopular();
-
 export const loadPopular = createAsyncThunk(
     'posts/loadPopular',
     redditAPI.fetchPopular
 )
 
+export const loadSearch = createAsyncThunk(
+    'posts/loadSearch',
+    async (searchQuery) => {
+        return await redditAPI.fetchByQuery(searchQuery);
+    }
+)
+
 const initialState = {
     data: [],
-    popular: [],
     filteredData: [],
+    popular: [],
+    search: [],
     isLoading: false,
     hasError: false
 };
@@ -35,6 +41,11 @@ const postsSlice = createSlice({
                 state.hasError = false;
                 state.popular = action.payload;
             })
+            .addCase(loadSearch.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.hasError = false;
+                state.search = action.payload;
+            })
             .addMatcher(isPending, (state) => {
                 state.isLoading = true;
                 state.hasError = false;
@@ -50,4 +61,5 @@ export const { loadDummyPosts, filterPosts } = postsSlice.actions;
 export default postsSlice.reducer;
 export const selectPostsData = (state) => state.posts.data;
 export const selectPostsPopular = (state) => state.posts.popular;
+export const selectPostsSearch = (state) => state.posts.search;
 export const selectPostsDataFiltered = (state) => state.posts.filteredData;

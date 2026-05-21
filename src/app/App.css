@@ -48,30 +48,123 @@ body {
     border-radius: 2rem;
 
     .header {
-        
+        display: grid;
+        grid-template-rows: 2rem auto;
+        align-items: center;
+
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+        }
     }
     .content {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         --content-size: 35rem;
+        background-color: black;
 
-        .upvotes {
-
-        }
         img {
             height: var(--content-size);
             width: var(--content-size);
-            background-color: black;
         }
         video {
             height: var(--content-size);
             width: var(--content-size);
-            background-color: black;
         }
     }
     .details {
         display: flex;
-        justify-content: space-between;
+        text-align: center;
+        gap: 1rem;
+
+        div {
+            background-color: lightgray;
+            border-radius: 1rem;
+            padding: 0 1rem;
+            line-height: 0;
+            margin: 0.5rem 0;
+        }
+
+        .upvotes-container {
+            display: flex;
+            width: auto;
+            align-items: center;
+
+            div {
+                padding: 0;
+                display: grid;
+                align-content: center;
+            }
+
+            .upvote-icon {
+                padding-right: 0.25rem;
+                --upvote-color: green;
+            }
+            .downvote-icon {
+                padding-left: 0.25rem;
+                --downvote-color: red;
+            }
+
+            .upvote-arrow {
+                width: 0;
+                height: 0;
+                border-left: 0.5rem solid transparent;
+	            border-right: 0.5rem solid transparent;
+	            border-bottom: 0.5rem solid var(--upvote-color);
+            }
+            .upvote-square {
+                justify-self: center;
+                width: 0;
+                height: 0;
+                border: 0.25rem solid var(--upvote-color);
+            }
+            .downvote-arrow {
+                width: 0;
+                height: 0;
+                border-left: 0.5rem solid transparent;
+	            border-right: 0.5rem solid transparent;
+	            border-top: 0.5rem solid var(--downvote-color);
+            }
+            .downvote-square {
+                justify-self: center;
+                width: 0;
+                height: 0;
+                border: 0.25rem solid var(--downvote-color);
+            }
+        }
+        .comments-container {
+            display: flex;
+            width: auto;
+            align-items: center;
+
+            div {
+                padding: 0;
+                display: grid;
+            }
+
+            .comment-icon {
+                padding-right: 0.25rem;
+                --comment-color: gray;
+            }
+            .comment-bubble {
+                width: 0;
+                height: 0;
+                border: 0.5rem solid var(--comment-color);
+                border-bottom-width: 0.3rem;
+                border-radius: 0.3rem;
+                border-bottom-right-radius: 0;
+            }
+            .comment-arrow {
+                justify-self: end;
+                width: 0;
+                height: 0;
+                border: 0.2rem solid var(--comment-color);
+                border-left: 0.6rem solid transparent;
+                border-bottom: 0.15rem solid transparent;
+                position: relative;
+                bottom: 0.15rem;
+            }
+        }
     }
 }

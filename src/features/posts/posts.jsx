@@ -21,9 +21,12 @@ export const Posts = () => {
 
     return (
         <div id="posts-container">
-            <h2>Posts</h2>
             {query === "" ? popular.map((post) => (
-                <Post post={post} key={post.id}/>
+                <div>
+                    <hr />
+                    <Post post={post} key={post.id}/>
+                    <hr />
+                </div>
             )) : search.map((post) => (
                 <Post post={post} key={post.id}/>
             )) }

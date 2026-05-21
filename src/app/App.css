@@ -1,9 +1,77 @@
 body {
-    background-color: darkslategray;
-    color: white;
+    background-color: white;
+    color: black;
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    justify-items: center;
+
+    --container-size: 30rem;
 }
 
-img {
-    height: 400px;
-    width: 400px;
+/* search bar */
+#search-bar-container {
+    /* outline: 5px solid darkgreen; */
+    padding: 4rem 0 0 0;
+    display: flex;
+    width: var(--container-size);
+    height: 2rem;
+    justify-content: center;
+}
+
+#search-bar {
+    width: 75%;
+}
+
+#search-button {
+    width: 25%;
+}
+
+
+/* posts */
+#posts-container {
+    display: grid;
+    padding: 4rem 0;
+    justify-content: center;
+    width: var(--container-size);
+    justify-self: center;
+
+    hr {
+        margin: 0;
+        border: 0.5px solid darkgray;
+    }
+}
+
+.post {
+    /* border: 1px solid black; */
+    border-radius: 2rem;
+
+    .header {
+        
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        --content-size: 35rem;
+
+        .upvotes {
+
+        }
+        img {
+            height: var(--content-size);
+            width: var(--content-size);
+            background-color: black;
+        }
+        video {
+            height: var(--content-size);
+            width: var(--content-size);
+            background-color: black;
+        }
+    }
+    .details {
+        display: flex;
+        justify-content: space-between;
+    }
 }

@@ -6,10 +6,8 @@ function App() {
 
   return (
     <>
-      <section>
-        <SearchBar/>
-        <Posts/>
-      </section>
+      <SearchBar/>
+      <Posts/>
     </>
   )
 }

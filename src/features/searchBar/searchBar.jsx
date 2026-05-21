@@ -21,13 +21,13 @@ export const SearchBar = () => {
             <input
                 id="search-bar"
                 type="text"
-                onChange={onQueryChangeHandler}
                 placeholder="search"
+                onChange={onQueryChangeHandler}
             />
             <button
-                onClick={onClickSearchHandler}
-                type="button"
                 id="search-button"
+                type="button"
+                onClick={onClickSearchHandler}
             >search</button>
         </div>
     )

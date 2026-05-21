@@ -11,20 +11,24 @@
 | Create Wireframe | Design a basic example of what "Reggit" will look like | - [x] |
 | Set Up Files | Prepare the web app with React | - [x] |
 | Version Control | Transform into a Git repo and push to Github | - [x] |
-| Build Components |- [x] Build the app with fake, local data<br>- [ ] Make it work with all screen sizes<br>- [ ] Create Unit Tests and End-to-End Tests | - [ ] |
+| Build Components | - [x] Build the app with fake, local data<br> - [ ] Make it work with all screen sizes<br> - [ ] Create Unit Tests and End-to-End Tests | - [ ] |
 | Add Reddit Data | Connect the app to the Reddit JSON API | - [x] |
-| Publish | Deploy the app | - [ ] |
+| Publish | Deploy the app | - [x] |
 | Extra | Improve the app | - [ ] |
 
 ## Technologies
-Technologies Used (e.g. React, Redux, etc.)
+React
+Redux
+Vite
+Canva
 
 ## Features
-Features of the app
+Browse r/popular and search Reddit
 
 ## Future Work
 ### Planned
-Future Additional Features
+Route Paths when opening posts
 
 ### Concepts
-Ideas
+Dark mode and Light mode
+Audio for videos

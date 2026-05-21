@@ -62,15 +62,21 @@ body {
         justify-content: center;
         flex-wrap: wrap;
         --content-size: 35rem;
-        background-color: black;
+        --backround-color: black;
 
         img {
             height: var(--content-size);
             width: var(--content-size);
+            border-radius: 1rem;
+            border: 0.08rem solid gray;
+            background-color: var(--backround-color);
         }
         video {
             height: var(--content-size);
             width: var(--content-size);
+            border-radius: 1rem;
+            border: 1px solid gray;
+            background-color: var(--backround-color);
         }
     }
     .details {

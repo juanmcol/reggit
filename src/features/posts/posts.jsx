@@ -28,7 +28,11 @@ export const Posts = () => {
                     <hr />
                 </div>
             )) : search.map((post) => (
-                <Post post={post} key={post.id}/>
+                <div>
+                    <hr />
+                    <Post post={post} key={post.id}/>
+                    <hr />
+                </div>
             )) }
         </div>
     )

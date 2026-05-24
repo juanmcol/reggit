@@ -8,12 +8,15 @@ body {
     justify-items: center;
 
     --container-size: 30rem;
+    --thin-border: 0.08rem;
 }
 
 /* search bar */
 #search-bar-container {
-    /* outline: 5px solid darkgreen; */
-    padding: 4rem 0 0 0;
+    border: var(--thin-border) solid darkgray;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 4rem;
     display: flex;
     width: var(--container-size);
     height: 2rem;
@@ -22,10 +25,13 @@ body {
 
 #search-bar {
     width: 75%;
+    padding-left: 1rem;
+    border: none;
 }
 
 #search-button {
     width: 25%;
+    border: none;
 }
 
 
@@ -67,15 +73,15 @@ body {
         img {
             height: var(--content-size);
             width: var(--content-size);
-            border-radius: 1rem;
-            border: 0.08rem solid gray;
+            border-radius: 1.5rem;
+            border: var(--thin-border) solid gray;
             background-color: var(--backround-color);
         }
         video {
             height: var(--content-size);
             width: var(--content-size);
-            border-radius: 1rem;
-            border: 1px solid gray;
+            border-radius: 1.5rem;
+            border: var(--thin-border) solid gray;
             background-color: var(--backround-color);
         }
     }

@@ -1,7 +1,4 @@
 export const redditAPI = {
-    urls: {
-        popular: "https://www.reddit.com/r/popular.json"
-    },
     fetchPopular: async () => {
         try {
             const response = await fetch("https://www.reddit.com/r/popular.json");
@@ -10,6 +7,7 @@ export const redditAPI = {
             }
 
             const result = await response.json();
+            console.log(result);
             const posts = result.data.children.map(obj => obj.data);
             return posts;
         } catch (error) {
@@ -30,5 +28,5 @@ export const redditAPI = {
         } catch (error) {
             console.log(error.message);
         }
-    }
+    },
 }
